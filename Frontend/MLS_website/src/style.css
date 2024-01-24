@@ -1,0 +1,85 @@
+*{
+    font-family: 'Rubik', sans-serif;
+}
+::selection{
+    background-color: black;
+    color: white;
+}
+
+.navbar:hover{
+    /* color: rgb(255, 255, 255); */
+    background-color: rgb(252 165 165);
+    box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
+    -webkit-box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
+    -moz-box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
+    transition: all ease 0.5s;
+}
+.navbar{
+  transition: all ease 0.5s; 
+}
+
+@media (max-width: 768px) {
+    
+    .nav {
+      display: none; 
+    }
+    .webName {
+      display: none; 
+    }
+    .login {
+      height: calc(100vh - 4rem);
+    }
+    .show{
+      display: none;
+    }
+  }
+@media (min-width: 768px) {
+    
+  
+    .login {
+      min-height: calc(100vh - 12rem);
+    }
+    .vido {
+      max-height: calc(100vh - 8rem);
+    }
+
+    .shop{
+      max-height: calc(100vh - 7rem);
+    }
+   
+    
+  }
+
+  .font{
+    font-family: 'Lora', serif;
+font-family: 'Playfair Display', serif;
+  }
+
+
+
+.mobile_nav{
+    min-height: calc(100vh - 3.5rem);
+}
+
+
+
+.button:after {
+    content: "";
+    display: block;
+    /* Specify the color, style, and width of the border */
+    margin-top: 1px; /* Adjust the spacing between the button text and the line */
+    transition: all ease-out cubic-bezier(0.77, 0, 0.175, 1);
+  }
+.button:hover:after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid black; /* Specify the color, style, and width of the border */
+    margin-top: 2px; /* Adjust the spacing between the button text and the line */
+
+  }
+
+  .styfont{
+    font-family: 'Grape Nuts', cursive;
+  }
+  
+
