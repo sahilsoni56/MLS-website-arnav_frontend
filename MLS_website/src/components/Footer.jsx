@@ -17,12 +17,12 @@ function Footer() {
             onClick={scrollToTop}
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
-           <IoDiamond className="lg:text-6xl md:text-4xl text-2xl"/>
+           <IoDiamond className="lg:text-4xl md:text-4xl text-2xl"/>
             <span className="self-center text-2xl font-semibold whitespace-nowrap ">
             Mohan Lal Sons
             </span>
           </Link>
-          <ul className="flex flex-wrap items-center mb-6 md:text-xl text-m font-medium text-black sm:mb-0 ">
+          <ul className="flex flex-wrap items-center mb-6 md:text-sm text-m font-medium text-black sm:mb-0 ">
             <li>
               <Link to='/' className="hover:underline me-4 md:me-6">
                 About
@@ -46,7 +46,7 @@ function Footer() {
           </ul>
         </div>
         <hr className="my-6 border-black sm:mx-auto  lg:my-8" />
-        <span className="block md:text-xl text-gray-500 sm:text-center ">
+        <span className="block md:text-sm text-gray-500 sm:text-center ">
           © 2023{" "}
           <Link to='/' className="hover:underline">
             Mohan Lal Sons

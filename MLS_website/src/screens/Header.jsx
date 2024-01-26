@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { BsCartCheckFill } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 import { MdOutlineAccountCircle, MdAccountCircle } from "react-icons/md";
-
+import { motion } from "framer-motion"
 
 const Header = () => {
  
@@ -44,30 +44,30 @@ const Header = () => {
 
   return (
     
-    <header  className="w-full backdrop-blur-sm md:absolute md:z-[999] bg-transparent md:bg-opacity-60">
+    <header  className="w-full backdrop-blur-sm md:z-[999] bg-transparent md:bg-opacity-60">
       <div
-        className={`navbar   md:bg-red-200  items-center h-[3rem] md:h-[13.5rem] lg:h-[11rem] md:bg-transparent lg:bg-transparent ${
+        className={`navbar overflow-hidden   items-center h-[3rem] md:h-[13.5rem] lg:h-[7rem] md:bg-transparent lg:bg-transparent ${
           navi ? "bg-red-300 rounded-bl-none rounded-br-none" : null
         }`}
       >
 
-        <div className=" md:items-center md:justify-center pt-1 px-3 md:px-7 show">
-            <div className ="flex w-full m-2  justify-end items-center font-extrabold">
+        <div className=" md:items-center  md:justify-center  px-3 md:px-7 ">
+            <div className ="flex w-full   justify-end items-center font-extrabold">
               <Link to='/login'>
-              <span className="md:cursor-pointer md:text-xl">Login |</span>
+              <span className="md:cursor-pointer md:text-sm">Login |</span>
               </Link>
               <Link to='/register'>
-              <span className="md:cursor-pointer md:text-xl">| Register</span>
+              <span className="md:cursor-pointer md:text-sm">| Register</span>
               </Link>
               </div>
         </div>
 
 
 
-        <div className="flex justify-between items-center md:py-3 text-left text-2xl px-8  ">
+        <div className="flex  justify-between items-center  text-left text-xl px-8  ">
           <div className="flex items-center w-full md:justify-center md:gap-3 gap-2">
-          <IoDiamond className="lg:text-6xl md:text-4xl"/>
-          <h1 className="webName lg:text-5xl md:text-3xl">MOHAN LAL SONS</h1>
+          <IoDiamond className="lg:text-5xl md:text-3xl"/>
+          <h1 className="webName lg:text-4xl md:text-2xl">MOHAN LAL SONS</h1>
           <h1 className="md:text-4xl md:hidden">MLS</h1>
           </div>
           <div className="flex justify-center items-center gap-6">
@@ -77,7 +77,7 @@ const Header = () => {
               </div>
             <button>
               <Link to='/cart' className="md:cursor-pointer">
-            <BsCartCheckFill className="md:text-4xl"/>
+            <BsCartCheckFill className="md:text-2xl"/>
               </Link>
             </button>
             </div>
@@ -88,11 +88,11 @@ const Header = () => {
           )}
           </div>
         </div>
-        <nav className="nav md:text-center navpoints ">
+        <nav className="nav md:text-center  ">
           {navItems.map((item) => (
             <button
               key={item.id}
-              className=" text-xl hover:scale-x-125 transition-all ease-linear font-bold mx-[20px] bg-transparent px-1 py-3 button "
+              className=" text-sm  transition-all ease-linear font-bold mx-[20px] bg-transparent px-1 hover:text-red-800 "
             >
               <Link to= {item.link}>{item.name}</Link>
             </button>

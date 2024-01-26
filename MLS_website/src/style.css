@@ -63,20 +63,7 @@ font-family: 'Playfair Display', serif;
 
 
 
-.button:after {
-    content: "";
-    display: block;
-    /* Specify the color, style, and width of the border */
-    margin-top: 1px; /* Adjust the spacing between the button text and the line */
-    transition: all ease-out cubic-bezier(0.77, 0, 0.175, 1);
-  }
-.button:hover:after {
-    content: "";
-    display: block;
-    border-bottom: 3px solid black; /* Specify the color, style, and width of the border */
-    margin-top: 2px; /* Adjust the spacing between the button text and the line */
 
-  }
 
   .styfont{
     font-family: 'Grape Nuts', cursive;
