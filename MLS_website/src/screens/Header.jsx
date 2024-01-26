@@ -46,7 +46,7 @@ const Header = () => {
     
     <header  className="w-full backdrop-blur-sm md:z-[999] bg-transparent md:bg-opacity-60">
       <div
-        className={`navbar overflow-hidden   items-center h-[3rem] md:h-[13.5rem] lg:h-[7rem] md:bg-transparent lg:bg-transparent ${
+        className={`navbar overflow-hidden   items-center h-[4rem] md:h-[13.5rem] lg:h-[7rem] md:bg-transparent lg:bg-transparent ${
           navi ? "bg-red-300 rounded-bl-none rounded-br-none" : null
         }`}
       >

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Card({ name, desc, img, toggle }) {
   return (
-    <Link className={`md:w-[30%] bg-red-200 w-full md:hover:scale-105 ${toggle === 'false' ? 'w-1/2' : null}`} >
+    <Link className={`md:w-[30%] bg-red-200 w-full md:hover:scale-105 `} >
       <div className="w-full  p-2  rounded-lg shadow-xl  ">
         <div className="w-full  object-cover overflow-hidden rounded-xl">
           <img

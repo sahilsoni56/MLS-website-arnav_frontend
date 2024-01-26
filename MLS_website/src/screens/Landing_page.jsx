@@ -76,20 +76,20 @@ function Landing_page() {
         </h2>
       </div>
       {/* green gem */}
-      <div className="relative w-full md:h-screen h-screen">
-        <div className="w-full absolute -z-10 h-full  object-contain">
+      <div className="relative w-full md:h-screen h-screen overflow-auto">
+        <div className="w-full absolute -z-10 h-full  ">
           <img
-            className="transform h-full scale-x-[-1] w-full"
+            className="transform h-full scale-x-[-1] w-full object-center object-cover"
             src="https://images.pexels.com/photos/1458867/pexels-photo-1458867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt=""
           />
         </div>
-        <div className=" h-full md:h-screen top-0 w-full  flex md:flex-row items-end md:items-end  flex-row   md:bg-transparent ">
-          <div className="  md:pb-36  px-6 md:px-32 md:inline-block  h-[40%] w-[80%]">
+        <div className=" h-full  md:h-screen  w-full  flex md:flex-row items-end md:items-end  flex-row   md:bg-transparent ">
+          <div className="  md:pb-36  px-4 md:px-32 md:inline-block   h-[30%] w-[80%]">
             <h1 className="  text-xl   text-white tracking-wider  md:text-3xl">
               Dazzling Emerald Drop
             </h1>
-            <h2 className=" text-white tracking-wider text-sm mb-3  md:text-2xl md:w-96 w-full backdrop-blur-lg md:mt-4">
+            <h2 className=" text-white tracking-wider text-sm mb-3  md:text-2xl md:w-96 w-full  md:mt-4">
               The sparkling diamonds add an extra touch of glamour.
             </h2>
             <Link to="/diamonds">
@@ -140,10 +140,10 @@ function Landing_page() {
       </div>
       {/* Shop by Category */}
       <div className="w-full py-3    bg-red-300">
-        <div className="md:h-28 bg-red-300 flex items-center justify-center">
+        <div className="md:h-28 bg-red-300  flex items-center justify-center">
           <h1 className="md:text-4xl text-3xl py-4">Shop by Category</h1>
         </div>
-        <div className="flex gap-3   w-full  justify-center flex-wrap">
+        <div className="flex gap-3   md:w-full  justify-center flex-wrap">
           {category.map((item, index) => (
             <Card key={index} toggle="false" name={item.name} img={item.img} />
           ))}
