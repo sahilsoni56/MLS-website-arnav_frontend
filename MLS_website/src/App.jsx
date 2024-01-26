@@ -1,8 +1,7 @@
 import React from 'react'
 import './style.css'
 import Landing_page from './screens/Landing_page'
-import  Header  from './screens/Header'
-
+import {motion} from 'framer-motion'
 function App() {
 
 

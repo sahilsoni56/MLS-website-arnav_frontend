@@ -27,6 +27,12 @@ const Header = () => {
     setNavi(!navi);
   };
 
+
+  const variants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: "100%" },
+  }
+
   useEffect(() => {
     if (navi) {
 
@@ -45,7 +51,22 @@ const Header = () => {
   return (
     
     <header  className="w-full backdrop-blur-sm md:z-[999] bg-transparent md:bg-opacity-60">
-      <div
+      <motion.div
+
+      initial={{
+        opacity:0,
+        y:-30,
+
+      }}
+      animate = {{
+        opacity:1,
+        y:0,
+        
+      }}
+      transition={{
+        bounce:0.6,
+        
+      }}
         className={`navbar overflow-hidden   items-center h-[4rem] md:h-[13.5rem] lg:h-[7rem] md:bg-transparent lg:bg-transparent ${
           navi ? "bg-red-300 rounded-bl-none rounded-br-none" : null
         }`}
@@ -54,10 +75,10 @@ const Header = () => {
         <div className=" md:items-center  md:justify-center  px-3 md:px-7 ">
             <div className ="flex w-full   justify-end items-center font-extrabold">
               <Link to='/login'>
-              <span className="md:cursor-pointer md:text-sm">Login |</span>
+              <span className="md:cursor-pointer  md:text-sm show">Login |</span>
               </Link>
               <Link to='/register'>
-              <span className="md:cursor-pointer md:text-sm">| Register</span>
+              <span className="md:cursor-pointer  md:text-sm show">| Register</span>
               </Link>
               </div>
         </div>
@@ -89,32 +110,46 @@ const Header = () => {
           </div>
         </div>
         <nav className="nav md:text-center  ">
-          {navItems.map((item) => (
-            <button
+          {navItems.map((item,index) => (
+            <motion.button
+            initial={{y:50,opacity:0}}
+            animate={{y:0,opacity:1}}
+            transition={{
+              delay: `${index * 0.1}`,
+              type: "spring", stiffness: 500 
+            }}
+          
               key={item.id}
               className=" text-sm  transition-all ease-linear font-bold mx-[20px] bg-transparent px-1 hover:text-red-800 "
             >
               <Link to= {item.link}>{item.name}</Link>
-            </button>
+            </motion.button>
           ))}
         </nav>
-      </div>
+      </motion.div>
 
-      <div
+      <motion.div
+      
         className={`mobile_nav absolute ${ navi ? "w-[100%]" : "w-0"
         } transition-all justify-between z-[999] flex flex-col ease-in-out duration-300 bg-red-300`}
       >
         <div >
           
           {showButtons &&
-            navItems.map((item) => (
-              <div key={item.id} className="px-8">
-                <button
+            navItems.map((item,index) => (
+              <div key={item.id} className="px-8 overflow-hidden">
+                <motion.button
+                initial={{y:50}}
+                animate={navi?{y:0,opacity:1} :null}
+                transition={{
+                  delay: `${index * 0.1}`,
+                  
+                }}
                   onClick={handleNavi}
-                  className=" border-b-4 border-black  transition-all  ease-in text-xl py-3  hover:rounded-3xl w-full items-center"
+                  className=" border-b-4  border-black  transition-all  ease-in text-xl py-3  hover:rounded-3xl w-full items-center"
                 >
                   <Link to= {item.link}>{item.name}</Link>
-                </button>
+                </motion.button>
               </div>
             ))}
         </div>
@@ -151,7 +186,7 @@ const Header = () => {
             </>
           )}
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 };
