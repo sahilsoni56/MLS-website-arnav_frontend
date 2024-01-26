@@ -17,20 +17,24 @@ const Navbar = () => {
     });
   };
 
- 
+
+  const navItems = [
+    { id: 1, name: "Sale", link: "/sale" },
+    { id: 2, name: "New In", link: "/new_in" },
+    { id: 3, name: "Gold", link: "/gold" },
+    { id: 4, name: "Silver", link: "/silver" },
+    { id: 5, name: "Accessories", link: "/accessories" },
+    { id: 6, name: "Diamonds", link: "/diamonds" },
+    { id: 7, name: "Gift", link: "/gifts" },
+    { id: 8, name: "World of Mohan Lal Sons", link: "/world_of_mls" },
+  ];
+
 
   return (
     <>
-      <nav className="absolute w-full flex-col flex shadow-2xl shadow-black items-center h-12 gap-2 md:justify-center justify-between text-2xl md:h-20 md:py-2 md:gap-4 px-6 ">
-        <div className="flex justify-center items-center py-1 gap-3">
-          <IoDiamond className="md:text-4xl" />
-          <h1 className=" md:text-4xl tracking-widest">Mohanl Lal Sons</h1>
-        </div>
-       
-      </nav>
 
-      <video
-        className="w-full bg-zinc-800 object-cover h-screen"
+<video
+        className="w-full absolute top-0 left-0 -z-10 object-center  object-cover h-screen"
         autoPlay
         loop
         disablePictureInPicture = 'false'
@@ -38,18 +42,37 @@ const Navbar = () => {
         src="https://firebasestorage.googleapis.com/v0/b/mls-ade8b.appspot.com/o/images%2F1705840738329login.mp4?alt=media&token=d462439b-80e3-495b-b100-d78042bc508b"
       />
 
-      <div className="md:top-[6rem] top-[3rem]  z-9 absolute w-full flex flex-col justify-around md:justify-between md:mt-1 items-center bg-transparent login">
+<nav className=" w-full flex md:flex-col shadow-2xl shadow-black bg-transparent items-center h-12  gap-2 justify-center  text-2xl md:h-32  md:gap-4 px-6 ">
+        <div className="flex justify-center items-center  gap-3">
+          <IoDiamond className=" md:text-4xl" />
+          <h1 className=" md:text-4xl tracking-wider">Mohanl Lal Sons</h1>
+        </div>
+        <nav className="nav md:text-center">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className="text-xl mx-[20px] font-bold bg-transparent px-1  button"
+            >
+              <Link to={item.link}>{item.name}</Link>
+            </button>
+          ))}
+        </nav>
+      </nav> 
+
+
+
+      <div className=" top-[3rem]   w-full flex flex-col justify-around  md:justify-between md:mt-4 items-center  login">
         
-        <div className="w-[80%]  bg-transparent shadow-2xl backdrop-blur-xl shadow-black md:max-w-[40%] rounded-3xl text-center text-4xl py-4 min-h-[60%] lg:h-[70%] lg:w-[50%]">
+        <div className="w-[80%]  bg-transparent shadow-2xl backdrop-blur-xl shadow-black md:max-w-[40%] rounded-3xl text-center text-3xl py-3 min-h-[60%] lg:h-[70%] lg:w-[50%]">
           <div className="h-full mx-12">
             <h1>Register</h1>
-            <h2 className="text-2xl tracking-widest mt-1">Welcome</h2>
-            {/* Email Field */}
+            <h2 className="text-xl tracking-widest mt-1">Welcome</h2>
+            
             <div className="flex flex-col mt-1 justify-center items-center">
               <div className="w-full">
                 <label
                   htmlFor="email"
-                  className="block  text-left font-medium text-xl text-white"
+                  className="block  text-left font-medium text-sm text-white"
                 >
                   Username :
                 </label>
@@ -64,12 +87,12 @@ const Navbar = () => {
                 onChange={(e) => handleInputChange("username", e.target.value)}
               />
             </div>
-            {/* Password Field */}
+           
             <div className="flex flex-col mt-1  justify-center items-center">
               <div className="w-full">
                 <label
                   htmlFor="email"
-                  className="block  text-left font-medium text-xl text-white "
+                  className="block  text-left font-medium text-sm text-white "
                 >
                   Email :
                 </label>
@@ -88,7 +111,7 @@ const Navbar = () => {
               <div className="w-full">
                 <label
                   htmlFor="password"
-                  className="block  text-left font-medium text-xl text-white "
+                  className="block  text-left font-medium text-sm text-white "
                 >
                   Password :
                 </label>
@@ -125,3 +148,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

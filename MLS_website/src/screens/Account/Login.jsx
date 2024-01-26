@@ -33,9 +33,20 @@ const Navbar = () => {
   };
 
   return (
+
+  
     <>
-      <nav className="absolute w-full flex md:flex-col shadow-2xl shadow-black items-center h-12  gap-2 justify-center  text-2xl md:h-32 c md:gap-4 px-6 ">
-        <div className="flex justify-center items-center py-1 gap-3">
+        <video
+        className="w-full absolute top-0 left-0 -z-10  object-cover h-screen"
+        autoPlay
+        loop
+        disablePictureInPicture = 'false'
+        
+        src="https://firebasestorage.googleapis.com/v0/b/mls-ade8b.appspot.com/o/images%2F1705840738329login.mp4?alt=media&token=d462439b-80e3-495b-b100-d78042bc508b"
+      />
+   
+      <nav className=" w-full flex md:flex-col shadow-2xl shadow-black bg-transparent items-center h-12  gap-2 justify-center  text-2xl md:h-32  md:gap-4 px-6 ">
+        <div className="flex justify-center items-center  gap-3">
           <IoDiamond className=" md:text-4xl" />
           <h1 className=" md:text-4xl tracking-wider">Mohanl Lal Sons</h1>
         </div>
@@ -49,18 +60,17 @@ const Navbar = () => {
             </button>
           ))}
         </nav>
-      </nav>
-
-      <video
-        className="w-full bg-zinc-800 object-cover h-screen"
-        autoPlay
-        loop
-        disablePictureInPicture = 'false'
+      </nav> 
+      
         
-        src="https://firebasestorage.googleapis.com/v0/b/mls-ade8b.appspot.com/o/images%2F1705840738329login.mp4?alt=media&token=d462439b-80e3-495b-b100-d78042bc508b"
-      />
+      
 
-      <div className="md:top-[8rem] top-[3rem] z-9 absolute w-full flex flex-col justify-around md:justify-between md:py-2 items-center bg-transparent login">
+
+
+
+      {/*  */}
+
+      <div className="md:top-[8rem] top-[3rem]  w-full flex flex-col justify-around md:justify-around md:py-2 items-center bg-transparent login">
         <div className="w-full md:mb-1 backdrop-blur-xl   px-4 mt-2 md:px-28">
           <h1 className="md:text-xl text-xl flex flex-wrap text-center text-red-900 ">
             "Embrace opulence and luxury; adorn yourself in the language of
@@ -72,7 +82,7 @@ const Navbar = () => {
           <div className="h-full mx-12">
             <h1>Login</h1>
             <h2 className="md:text-2xl text-xl tracking-widest">Welcome back :)</h2>
-            {/* Email Field */}
+           
             <div className="flex flex-col  justify-center items-center">
               <div className="w-full">
                 <label
@@ -92,7 +102,7 @@ const Navbar = () => {
                 onChange={(e) => handleInputChange("email", e.target.value)}
               />
             </div>
-            {/* Password Field */}
+           
             <div className="flex flex-col justify-center items-center">
               <div className="w-full">
                 <label
@@ -135,3 +145,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+

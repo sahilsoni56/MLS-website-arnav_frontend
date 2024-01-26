@@ -127,7 +127,7 @@ function Landing_page() {
             - Shop chains -
           </button>
         </div>
-        <div className="w-full flex items-center justify-center bg-red-800 h-[80%] object-cover object-center">
+        <div className="w-full flex items-center justify-center  h-[80%] object-cover object-center">
           <video
             autoPlay
             playsInline
