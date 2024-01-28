@@ -1,11 +1,11 @@
 import React from "react";
 import "../style.css";
-import Header from "./Header";
+import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap'
 function Landing_page() {
   const carditems = [
     {
@@ -26,15 +26,6 @@ function Landing_page() {
     },
   ];
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "-100px 0px", // Adjust this value based on when you want the animation to start
-  });
-  const [ref1, inView1] = useInView({
-    triggerOnce: true,
-    rootMargin: "-100px 0px", // Adjust this value based on when you want the animation to start
-  });
-
   const category = [
     {
       name: "Gold- Jewelry",
@@ -54,9 +45,26 @@ function Landing_page() {
       link: "/",
     },
   ];
+
+
+  useGSAP(()=>{
+    gsap.from('.ignite',{
+      scrollTrigger:{
+        trigger:'.boxignite',
+        start: "top top",
+        end:"bottom center",
+       
+      },
+      
+      x:100,
+      opacity:0,
+      duration:1.5,
+      ease:"power4",
+    })
+  })
   return (
     <>
-      <motion.div>
+      <div>
         <div className="h-screen w-full">
           <Header />
           <div className="absolute -z-10 top-0 h-screen   w-full  overflow-hidden ">
@@ -71,28 +79,22 @@ function Landing_page() {
           </div>
         </div>
         {/* ignite your dreams/ */}
-        <div className="w-full bg-red-800 flex justify-center flex-col items-center  md:px-8">
-          <motion.h1
-            ref={ref}
-            initial={{ x: 100, opacity: 0 }}
-            animate={inView ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 1 }}
-            className="text-2xl py-2 md:text-4xl tracking-wider italic font "
+        <div className="boxignite w-full bg-red-300 flex justify-center flex-col items-center  md:px-8">
+          <h1
+           
+            className="text-2xl py-2 md:text-4xl tracking-wider italic font ignite "
           >
             Ignite Your Dreams
-          </motion.h1>
-          <motion.h2
-            ref={ref}
-            initial={{ x: -100, opacity: 0 }}
-            animate={inView ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 1.1 }}
+          </h1>
+          <h2
+           
             className="md:px-16 flex flex-wrap pt-2 pb-5 px-3 md:py-2  text-center text-sm md:text-xl font-medium"
           >
             Since 1992, Mohanlal Sons epitomizes unbridled innovation and design
             mastery in jewelry and accessories. We redefine luxury with an
             audacious spirit, setting new standards with each piece. Welcome to
             the pinnacle of distinction—welcome to Mohanlal Sons.
-          </motion.h2>
+          </h2>
         </div>
         {/* green gem */}
         <div className="relative w-full md:h-screen h-screen ">
@@ -106,28 +108,21 @@ function Landing_page() {
           <div className=" h-full  md:h-screen  w-full  flex md:flex-row items-end md:items-end  flex-row   md:bg-transparent ">
             <div className="  md:pb-30  px-4 md:px-28 md:inline-block    h-[35%] md:w-[60%] w-[80%]">
               
-              <motion.h1
-                ref={ref1}
-                initial={{ y: 100 }}
-                animate={inView1 ? { y: 0 } : {}}
-                transition={{ duration: 1.1, type: "spring" }}
+              <h1
+               
                 className=" overflow-hidden text-xl   text-white tracking-wider  md:text-4xl"
               >
                 Dazzling Emerald Drop
-              </motion.h1>
-              <motion.h2 ref={ref1}
-                initial={{ y: 100 }}
-                animate={inView1 ? { y: 0 } : {}}
-                transition={{ duration: 1.1, type: "spring" }}  className=" text-white tracking-wider text-sm mb-3  md:text-2xl md:w-96 w-full  md:mt-4">
+              </h1>
+              <h2
+               className=" text-white tracking-wider text-sm mb-3  md:text-2xl md:w-96 w-full  md:mt-4">
                 The sparkling diamonds add an extra touch of glamour.
-              </motion.h2>
+              </h2>
               <Link to="/diamonds">
-                <motion.button ref={ref1}
-                initial={{ y: 100 }}
-                animate={inView1 ? { y: 0 } : {}}
-                transition={{ duration: 1.1, type: "spring" }} className="bg-black text-white md:mt-2 px-3 py-2 hover:scale-110 hover:bg-white transition-all ease-linear hover:text-black font md:px-12 md:py-4 md:-mb-4 ">
+                <button 
+                className="bg-black text-white md:mt-2 px-3 py-2 hover:scale-110 hover:bg-white transition-all ease-linear hover:text-black font md:px-12 md:py-4 md:-mb-4 ">
                   Discover more
-                </motion.button>
+                </button>
               </Link>
             </div>
           </div>
@@ -210,7 +205,7 @@ function Landing_page() {
           </div>
         </div>
         <Footer />
-      </motion.div>
+      </div>
     </>
   );
 }
