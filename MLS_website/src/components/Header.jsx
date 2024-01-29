@@ -112,7 +112,7 @@ const Header = () => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ ease: "easeIn", duration: 1, delay: index * 0.06 }}
               key={item.id}
-              className=" text-sm  transition-all ease-linear font-bold mx-[20px] bg-transparent px-1 hover:text-red-800 relative line"
+              className="text-sm  transition-all ease-linear font-bold mx-[20px] bg-transparent px-1 hover:text-red-800 relative line"
             >
               <Link to={item.link}>{item.name}</Link>
             </motion.button>

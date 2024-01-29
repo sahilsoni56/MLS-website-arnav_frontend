@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import "../style.css";
 import Header from "../components/Header";
@@ -5,8 +7,11 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import Cursor from "../components/Cursor";
+
 
 function Landing_page() {
+ 
   const carditems = [
     {
       img: "https://images.pexels.com/photos/7541808/pexels-photo-7541808.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -46,9 +51,12 @@ function Landing_page() {
     },
   ];
 
+
   return (
     <>
-      <div>
+
+      <div className="overflow-x-hidden">
+        <Cursor/>
         <div id="main" className=" h-screen w-full">
           <Header />
           <div className="absolute -z-10 top-0 h-screen   w-full  overflow-hidden ">
@@ -134,9 +142,9 @@ function Landing_page() {
               Matrix
             </motion.h1>
             <motion.h1
-             initial={{ opacity: 0 ,opacity:0,x:-120}}
+             initial={{ opacity:0,x:-120}}
               whileInView={{ x: 0, opacity:1 }}
-              transition={{ ease: "linear" , duration: 1}}
+              transition={{ ease: "linear" , duration: 0.6}}
               viewport={{ once: true }}
               className="w-[100%] md:mt-4 mt-2 md:text-sm"
             >

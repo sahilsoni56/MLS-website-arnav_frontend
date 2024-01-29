@@ -1,10 +1,22 @@
 *{
+  
     font-family: 'Rubik', sans-serif;
+  }
+  
+  html,body{
+  cursor: none;
 }
+
+
 ::selection{
     background-color: black;
     color: white;
 }
+.custom-cursor {
+  
+  mix-blend-mode:exclusion
+}
+
 
 .navbar:hover{
     /* color: rgb(255, 255, 255); */
