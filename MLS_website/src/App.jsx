@@ -8,7 +8,9 @@ function App() {
   return (
    
      <>
+
      <Landing_page/>
+
      </>
   )
 }

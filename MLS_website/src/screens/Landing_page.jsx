@@ -4,8 +4,8 @@ import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-import { useGSAP } from "@gsap/react";
-import gsap from 'gsap'
+import { motion } from "framer-motion";
+
 function Landing_page() {
   const carditems = [
     {
@@ -46,26 +46,10 @@ function Landing_page() {
     },
   ];
 
-
-  useGSAP(()=>{
-    gsap.from('.ignite',{
-      scrollTrigger:{
-        trigger:'.boxignite',
-        start: "top top",
-        end:"bottom center",
-       
-      },
-      
-      x:100,
-      opacity:0,
-      duration:1.5,
-      ease:"power4",
-    })
-  })
   return (
     <>
       <div>
-        <div className="h-screen w-full">
+        <div id="main" className=" h-screen w-full">
           <Header />
           <div className="absolute -z-10 top-0 h-screen   w-full  overflow-hidden ">
             <video
@@ -79,17 +63,11 @@ function Landing_page() {
           </div>
         </div>
         {/* ignite your dreams/ */}
-        <div className="boxignite w-full bg-red-300 flex justify-center flex-col items-center  md:px-8">
-          <h1
-           
-            className="text-2xl py-2 md:text-4xl tracking-wider italic font ignite "
-          >
+        <div className=" w-full bg-[#BCAA99] flex justify-center flex-col items-center  md:px-8 ">
+          <h1 className="text-2xl py-2 md:text-4xl tracking-wider italic font  ">
             Ignite Your Dreams
           </h1>
-          <h2
-           
-            className="md:px-16 flex flex-wrap pt-2 pb-5 px-3 md:py-2  text-center text-sm md:text-xl font-medium"
-          >
+          <h2 className="md:px-16 flex flex-wrap pt-2 pb-5 px-3 md:py-2  text-center text-sm md:text-xl font-medium ">
             Since 1992, Mohanlal Sons epitomizes unbridled innovation and design
             mastery in jewelry and accessories. We redefine luxury with an
             audacious spirit, setting new standards with each piece. Welcome to
@@ -97,7 +75,7 @@ function Landing_page() {
           </h2>
         </div>
         {/* green gem */}
-        <div className="relative w-full md:h-screen h-screen ">
+        <div className="relative w-full md:h-screen h-screen overflow-hidden ">
           <div className="w-full absolute -z-10 h-full  ">
             <img
               className="transform h-full scale-x-[-1] w-full object-center object-cover"
@@ -107,20 +85,14 @@ function Landing_page() {
           </div>
           <div className=" h-full  md:h-screen  w-full  flex md:flex-row items-end md:items-end  flex-row   md:bg-transparent ">
             <div className="  md:pb-30  px-4 md:px-28 md:inline-block    h-[35%] md:w-[60%] w-[80%]">
-              
-              <h1
-               
-                className=" overflow-hidden text-xl   text-white tracking-wider  md:text-4xl"
-              >
+              <h1 className=" overflow-hidden text-xl   text-white tracking-wider  md:text-4xl">
                 Dazzling Emerald Drop
               </h1>
-              <h2
-               className=" text-white tracking-wider text-sm mb-3  md:text-2xl md:w-96 w-full  md:mt-4">
+              <h2 className=" text-white tracking-wider text-sm mb-3  md:text-2xl md:w-96 w-full  md:mt-4">
                 The sparkling diamonds add an extra touch of glamour.
               </h2>
               <Link to="/diamonds">
-                <button 
-                className="bg-black text-white md:mt-2 px-3 py-2 hover:scale-110 hover:bg-white transition-all ease-linear hover:text-black font md:px-12 md:py-4 md:-mb-4 ">
+                <button className="bg-black text-white md:mt-2 px-3 py-2 hover:scale-110 hover:bg-white transition-all ease-linear hover:text-black font md:px-12 md:py-4 md:-mb-4 ">
                   Discover more
                 </button>
               </Link>
@@ -128,64 +100,98 @@ function Landing_page() {
           </div>
         </div>
         {/* cardss */}
-        <div className="w-full  bg-red-300 flex flex-col justify-center items-center text-2xl text-black md:text-5xl">
-          <h1 className="tracking-wider py-6 md:py-15">Love at First Sight</h1>
+        <div className="w-full  bg-[#BCAA99] flex flex-col justify-center items-center text-2xl text-black md:text-5xl">
+          <h1 className="tracking-wider py-6 md:py-15 style font-bold">
+            Love at First Sight
+          </h1>
         </div>
-        <div className="flex w-full bg-red-300 py-4 gap-3 justify-center flex-wrap">
+        <div className="flex w-full bg-[#BCAA99] py-4 gap-3 justify-center flex-wrap">
           {carditems.map((item, index) => (
-            <Card
-              key={index}
-              name={item.name}
-              desc={item.desc}
-              img={item.img}
-            />
+            <motion.div
+            initial={{x:150,scale:0.8,opacity:0}}
+            whileInView={{x:0,opacity:1,scale:1}}
+            transition={{duration:0.6,ease:'linear',delay:index*0.1}}
+            viewport={{once:true}}
+            className="md:w-[30%]">
+              <Card
+                key={index}
+                name={item.name}
+                desc={item.desc}
+                img={item.img}
+              />
+            </motion.div>
           ))}
         </div>
         {/* chains */}
-        <div className="w-full md:h-screen gap-8  bg-red-300 md:flex px-6 items-center">
+        <div className="w-full md:h-screen gap-8  bg-[#BCAA99] md:flex px-6 items-center">
           <div className="md:w-[50%]  md:flex md:justify-center md:flex-col w-full   h-[70%] ">
-            <h1 className="md:text-4xl text-2xl    font-bold">Matrix</h1>
-            <h1 className="w-[100%] md:mt-4 mt-2 md:text-sm">
+            <motion.h1
+              whileInView={{ x: [-120, 0], duration: 1.9, opacity: [0, 1] }}
+              transition={{ ease: "linear", }}
+              viewport={{ once: true }}
+              className="md:text-4xl text-2xl style   font-bold"
+            >
+              Matrix
+            </motion.h1>
+            <motion.h1
+             initial={{ opacity: 0 ,opacity:0,x:-120}}
+              whileInView={{ x: 0, opacity:1 }}
+              transition={{ ease: "linear" , duration: 1}}
+              viewport={{ once: true }}
+              className="w-[100%] md:mt-4 mt-2 md:text-sm"
+            >
               An expression of expert savoir-faire, our mesmerizing Matrix
               family is designed to inspire and impress. Showcasing an
               unexpected fluidity embracing classic cuts, vibrant colors, and
               essential Tennis styles, these works of wonder can be worn solo or
               stacked together for self-expression
-            </h1>
-            <button className="bg-white hover:bg-black hover:text-white transition-all ease-linear delay-100 text-black w-1/2 md:px-6 lg:px-8 lg:py-3 md:mt-4 my-3 md:py-2">
-              Shop chains
-            </button>
+            </motion.h1>
+            <motion.button
+            whileInView={{ x: [-120, 0], duration: 1.9, opacity: [0, 1] }}
+            transition={{ ease: "linear" }}
+            viewport={{ once: true }}
+            className="bg-white hover:bg-black hover:text-white transition-all ease-linear delay-100 text-black w-1/2 md:px-6 lg:px-8 lg:py-3 md:mt-4 my-3 md:py-2">
+              <h1 className="relative linee">Shop chains</h1>
+            </motion.button>
           </div>
-          <div className="w-full flex items-center justify-center  h-[75%] object-cover object-center">
+          <motion.div
+            initial={{ scale: 0.6 ,opacity:0}}
+            whileInView={{ opacity:  1, scale: 1 }}
+            transition={{ ease:'linear', duration: 0.6 }}
+            viewport={{ once: true }}
+            className="w-full flex items-center justify-center  h-[75%] object-cover object-center overflow-hidden"
+          >
             <video
               autoPlay
               playsInline
               muted
               loop
-              className=" w-full h-full object-cover"
+              className=" w-full h-full object-cover md:hover:scale-125 transition-all duration-300 ease-linear"
               src="https://firebasestorage.googleapis.com/v0/b/mls-ade8b.appspot.com/o/images%2F1705935470997pexels-sunsetoned-6469640%20(2160p).mp4?alt=media&token=fe6d4ba7-d1a3-4341-b5b5-1b302a532a85"
               alt=""
             />
-          </div>
+          </motion.div>
         </div>
         {/* Shop by Category */}
-        <div className="w-full py-3    bg-red-300">
-          <div className="md:h-28 bg-red-300  flex items-center justify-center">
+        <div className="w-full py-3    bg-[#BCAA99]">
+          <div className="md:h-28 bg-[#BCAA99]  flex items-center justify-center">
             <h1 className="md:text-4xl text-3xl py-4">Shop by Category</h1>
           </div>
-          <div className="flex gap-3   md:w-full  justify-center flex-wrap">
+          <motion.div className="flex md:gap-3 px-2   md:w-full  justify-center flex-wrap">
             {category.map((item, index) => (
-              <Card
-                key={index}
-                toggle="false"
-                name={item.name}
-                img={item.img}
-              />
+              <div className="md:w-[30%] w-1/2">
+                <Card
+                  key={index}
+                  toggle="false"
+                  name={item.name}
+                  img={item.img}
+                />
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
         {/* world 0f MLS */}
-        <div className="w-full py-4 md:pt-3 bg-red-300 px-4">
+        <div className="w-full py-4 md:pt-3 bg-[#BCAA99] px-4">
           <div className=" md:py-3 flex items-center justify-center">
             <h1 className="md:text-3xl font-bold tracking-wider">
               World of MLS
@@ -199,7 +205,7 @@ function Landing_page() {
           <div className="flex items-center md:py-4 justify-center w-full">
             <Link to="/world_of_mls">
               <button className="outline text-black hover:bg-black hover:text-white transition-all ease-linear px-8 py-2 md:py-2 md:px-10">
-                Explore all
+                <h1 className="relative linee">Explore all</h1>
               </button>
             </Link>
           </div>

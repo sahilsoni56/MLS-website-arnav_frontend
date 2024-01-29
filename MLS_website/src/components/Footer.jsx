@@ -10,7 +10,7 @@ function Footer() {
     };
 
   return (
-    <footer className="bg-red-300 w-full ">
+    <footer className="bg-[#BCAA99] w-full ">
       <div className="w-full max-w-screen-2xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link
@@ -24,22 +24,22 @@ function Footer() {
           </Link>
           <ul className="flex flex-wrap items-center mb-6 md:text-sm text-m font-medium text-black sm:mb-0 ">
             <li>
-              <Link to='/' className="hover:underline me-4 md:me-6">
+              <Link to='/' className=" me-4 md:me-6 relative line ">
                 About
               </Link>
             </li>
             <li>
-              <Link to='/' className="hover:underline me-4 md:me-6">
+              <Link to='/' className=" me-4 md:me-6 relative line">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to='/' className="hover:underline me-4 md:me-6">
+              <Link to='/' className="me-4 md:me-6 relative line">
                 Licensing
               </Link>
             </li>
             <li>
-              <Link to='/' className="hover:underline">
+              <Link to='/' className=" relative line">
                 Contact
               </Link>
             </li>

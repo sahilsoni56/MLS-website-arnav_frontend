@@ -8,7 +8,7 @@
 
 .navbar:hover{
     /* color: rgb(255, 255, 255); */
-    background-color: rgb(252 165 165);
+    background-color: rgb(188, 170, 153);
     box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
     -webkit-box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
     -moz-box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
@@ -69,4 +69,41 @@ font-family: 'Playfair Display', serif;
     font-family: 'Grape Nuts', cursive;
   }
   
+
+  .line::after{
+    content: "";
+    position: absolute;
+
+    bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* You can adjust the thickness of the underline */
+  background-color: #050505; /* You can set the color of the underline */
+  transition: width 0.3s ease;
+  }
+  .line:hover:after{
+   width: 100%;
+  }
+
+
+  .linee::after{
+    content: "";
+    position: absolute;
+
+    bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* You can adjust the thickness of the underline */
+  background-color: #ffffff; /* You can set the color of the underline */
+  transition: width 0.3s ease;
+  }
+  .linee:hover:after{
+   width: 100%;
+  }
+
+  .style{
+    font-family: 'Lora', serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Stylish', serif;
+  }
 
