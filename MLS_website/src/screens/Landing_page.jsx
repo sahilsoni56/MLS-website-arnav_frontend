@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import Cursor from "../components/Cursor";
-
-
+import Cursor from '../components/Animatedcursor'
 function Landing_page() {
  
   const carditems = [
