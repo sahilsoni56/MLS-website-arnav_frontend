@@ -2,12 +2,26 @@
     font-family: 'Rubik', sans-serif;
   }
   
-
+@font-face {
+  font-family: 'name';
+  src: url('../src/public/font/5f242a69b1577e63266b4d72_DomaineDispCondMedium.ttf');
+}
 html {
     --cursor-color: #333
+    
 }
 
+.fonty{
+  font-family: 'name';
+}
 
+#img{
+  background-image: url('./img-noise-1920x1080.png');
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+ 
+}
 ::selection{
     background-color: black;
     color: white;
@@ -17,10 +31,15 @@ html {
   mix-blend-mode:exclusion
 }
 
+#h2:hover{
+  -webkit-box-shadow: 0px 17px 19px 7px rgba(191,48,48,1);
+-moz-box-shadow: 0px 17px 19px 7px rgba(191,48,48,1);
+box-shadow: 0px 17px 19px 7px rgba(191,48,48,1);
+}
 
 .navbar:hover{
     /* color: rgb(255, 255, 255); */
-    background-color: rgb(188, 170, 153);
+    background-color: #F2E9E9;
     box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
     -webkit-box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);
     -moz-box-shadow: -1px 14px 22px 7px rgba(0,0,0,0.81);

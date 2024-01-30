@@ -15,18 +15,18 @@ function Card({ name, desc, img, toggle }) {
           />
         </div>
         <div className="pl-2  mt-10">
-          <h4 className="md:text-xl font-extrabold tracking-wider  text-black">
+          <h4 className="md:text-xl font-extrabold tracking-wider  text-[#914042]">
             {name}
           </h4>
           <p
-            className={`mb-2 md:text-sm leading-normal text-black ${
+            className={`mb-2 md:text-sm leading-normal text-[#914042] ${
               toggle === "false" ? "hidden" : null
             }`}
           >
             {desc}
           </p>
           <button
-            className={`px-6 py-2 hover:bg-black hover:text-white transition-all ease-linear duration-500 hover:w-full text-sm border text-black bg-white rounded shadow style font-semibold ${
+            className={`px-6 py-2 hover:bg-black hover:text-white transition-all ease-linear duration-500 hover:w-full text-sm border text-[#914042] bg-[#f2d4d4] rounded shadow style font-semibold ${
               toggle === "false" ? "hidden" : null
             }`}
           >
