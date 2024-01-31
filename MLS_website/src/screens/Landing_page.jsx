@@ -3,9 +3,11 @@ import "../style.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { IoDiamondSharp } from "react-icons/io5";
+import ScrolltoTop from "../components/ScrolltoTop";
 function Landing_page() {
   const carditems = [
     {
@@ -45,9 +47,35 @@ function Landing_page() {
       link: "/",
     },
   ];
+  const [header, setheader] = useState(false);
+  const [scroll, setscroll] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      setscroll(window.scrollY);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    if (scroll < 50) {
+      setheader(false);
+    } else {
+      setheader(true);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scroll]);
   return (
     <>
+      <motion.div
+        animate={header ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.4 , ease:'linear' }}
+        className={`transition-all ease-linear `}
+      >
+        <ScrolltoTop />
+      </motion.div>
+
       <div className="overflow-x-hidden w-full ">
         <div id="main" className="relative h-screen w-full">
           <Header />
@@ -137,16 +165,15 @@ function Landing_page() {
             MOHAN LAL SONS
           </h1>
         </div>
-        <hr  className=" mx-4 bg-transparent border-[#914042]  sm:mx-auto  lg:my-8 md:hidden" />
+        <hr className=" mx-4 bg-transparent border-[#914042]  sm:mx-auto  lg:my-8 md:hidden" />
 
-<div id="img" className="visible h-divider bg-transparent">
-  <div className="shadow bg-transparent"></div>
-  <div className="text2  "><IoDiamondSharp className="text-5xl text-[#914042] "  /></div>
-</div>
-  
+        <div id="img" className="visible h-divider bg-transparent">
+          <div className="shadow bg-transparent"></div>
+          <div className="text2  ">
+            <IoDiamondSharp className="text-5xl text-[#914042] " />
+          </div>
+        </div>
 
-
-       
         {/* chains */}
         <div
           id="img"
