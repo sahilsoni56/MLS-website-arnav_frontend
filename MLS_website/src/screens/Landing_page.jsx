@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-
+import { IoDiamondSharp } from "react-icons/io5";
 function Landing_page() {
   const carditems = [
     {
@@ -139,9 +139,9 @@ function Landing_page() {
         </div>
         <hr  className=" mx-4 bg-transparent border-[#914042]  sm:mx-auto  lg:my-8 md:hidden" />
 
-<div id="img" class="visible h-divider bg-transparent">
-  <div class="shadow bg-transparent"></div>
-  <div class="text2"><img  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhddge7nLIsIyF75d8vSSs-Fz11rGeETSrOqr7rsMLC5e7Jto6eMzCIb1KXRu6NK3vBKXmK76a0cXeh5j-UQ_6n7YfxUCP3cOFKSGnfG-9Yvvsir-eZmJQi0LmzZZhdsnCo4RsWxYs6NdL2h4_CXCeLyWe8q8g4bjPQ1cgOVXopmcSJZAOvGEujlNxM/s1600/images20.png" /></div>
+<div id="img" className="visible h-divider bg-transparent">
+  <div className="shadow bg-transparent"></div>
+  <div className="text2  "><IoDiamondSharp className="text-5xl text-[#914042] "  /></div>
 </div>
   
 
