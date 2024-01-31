@@ -137,7 +137,16 @@ function Landing_page() {
             MOHAN LAL SONS
           </h1>
         </div>
-        <hr className=" border-[#914042] sm:mx-auto" />
+        <hr  className=" mx-4 bg-transparent border-[#914042]  sm:mx-auto  lg:my-8 md:hidden" />
+
+<div id="img" class="visible h-divider bg-transparent">
+  <div class="shadow bg-transparent"></div>
+  <div class="text2"><img  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhddge7nLIsIyF75d8vSSs-Fz11rGeETSrOqr7rsMLC5e7Jto6eMzCIb1KXRu6NK3vBKXmK76a0cXeh5j-UQ_6n7YfxUCP3cOFKSGnfG-9Yvvsir-eZmJQi0LmzZZhdsnCo4RsWxYs6NdL2h4_CXCeLyWe8q8g4bjPQ1cgOVXopmcSJZAOvGEujlNxM/s1600/images20.png" /></div>
+</div>
+  
+
+
+       
         {/* chains */}
         <div
           id="img"
@@ -232,7 +241,10 @@ function Landing_page() {
             </Link>
           </div>
         </div>
-        <div id="img" className="flex md:flex-row flex-col items-center justify-between px-10">
+        <div
+          id="img"
+          className="flex md:flex-row flex-col items-center justify-between px-10"
+        >
           <div>
             <h1 className="text-[#914042] md:text-3xl">Address</h1>
           </div>
