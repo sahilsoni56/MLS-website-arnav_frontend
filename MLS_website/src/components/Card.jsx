@@ -26,7 +26,7 @@ function Card({ name, desc, img, toggle }) {
             {desc}
           </p>
           <button
-            className={`px-6 py-2 hover:bg-black hover:text-white transition-all ease-linear duration-500 hover:w-full text-sm border text-[#914042] bg-[#f2d4d4] rounded shadow style font-semibold ${
+            className={`px-6 py-2 hover:bg-black hover:text-white transition-all ease-linear duration-500 hover:w-full text-sm border text-[#914042] bg-[#f7e2e2] rounded shadow style font-semibold ${
               toggle === "false" ? "hidden" : null
             }`}
           >

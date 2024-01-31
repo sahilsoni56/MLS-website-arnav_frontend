@@ -121,7 +121,7 @@ function Landing_page() {
               whileInView={{ x: 0, opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "linear", delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="md:w-[30%]"
+              className="md:w-[30%] bg-[#f8cccc]"
             >
               <Card
                 key={index}
