@@ -48,10 +48,10 @@ function Landing_page() {
 
   return (
     <>
-      <div className="overflow-x-hidden ">
-        <div id="main" className=" h-screen w-full">
+      <div className="overflow-x-hidden w-full ">
+        <div id="main" className="relative h-screen w-full">
           <Header />
-          <div className="absolute -z-10 top-0 h-screen   w-full  overflow-hidden ">
+          <div className="absolute -z-10 top-0 h-screen items-center   w-full  overflow-hidden ">
             <video
               autoPlay
               playsInline
@@ -133,7 +133,7 @@ function Landing_page() {
           ))}
         </div>
         <div id="img" className="flex items-center justify-center w-full ">
-          <h1 className="text-[#914042] w-full text-center mx-0 px-0  md:text-[12vw] fill-none tracking-widest fonty ">
+          <h1 className="text-[#914042] w-full text-center mx-0 px-0  md:text-[12vw] text-[4.3rem] tracking-tight fill-none md:tracking-widest fonty ">
             MOHAN LAL SONS
           </h1>
         </div>
@@ -232,11 +232,11 @@ function Landing_page() {
             </Link>
           </div>
         </div>
-        <div id="img" className="flex items-center justify-between px-10">
+        <div id="img" className="flex md:flex-row flex-col items-center justify-between px-10">
           <div>
             <h1 className="text-[#914042] md:text-3xl">Address</h1>
           </div>
-          <div className="h-80 w-[32rem]">
+          <div className="h-80 md:w-[32rem] w-full ">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7022.450360935977!2d77.38828009326971!3d28.352040953276084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc5b53d002ae1%3A0xaf929ace0c2d393b!2sMohan%20Lal%20Sons!5e0!3m2!1sen!2sin!4v1706635036607!5m2!1sen!2sin"
               width="100%"

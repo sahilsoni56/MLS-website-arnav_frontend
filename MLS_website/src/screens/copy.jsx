@@ -62,7 +62,9 @@ const Header = () => {
     <>
       <header
         // id="img"
-        className={`w-full md:fixed  bg-[#F2E9E9]  md:backdrop-blur-sm md:z-[999] md:bg-opacity-60`}
+        className={`w-full  bg-[#F2E9E9]  md:backdrop-blur-sm md:z-[999] ${
+          header ? "md:smallnavshadow md:fixed" : null
+        }    md:bg-opacity-60 `}
       >
         <div
           
@@ -174,7 +176,7 @@ const Header = () => {
         <div
           className={`mobile_nav absolute ${
             navi ? "w-[100%]" : "w-0"
-          } transition-all justify-between z-[999] flex flex-col ease-in-out duration-300 bg-[#F2E9E9]`}
+          } transition-all justify-between z-[999] flex flex-col ease-in-out duration-300 bg-[#BCAA99]`}
         >
           <div>
             {showButtons &&
