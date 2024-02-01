@@ -8,6 +8,11 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { IoDiamondSharp } from "react-icons/io5";
 import ScrolltoTop from "../components/ScrolltoTop";
+import Smallcards from "../components/Smallcards";
+import Bangles from "../public/SVG/Bangles";
+import Diamondring from "../public/SVG/Diamondring";
+import Eaarings from "../public/SVG/Eaarings";
+import Goldnecklace from "../public/SVG/Goldnecklace";
 function Landing_page() {
   const carditems = [
     {
@@ -105,8 +110,16 @@ function Landing_page() {
             the pinnacle of distinction—welcome to Mohanlal Sons.
           </h2>
         </div>
+        <div id="img" className="flex md:items-center flex-wrap md:justify-center md:px-16 md:py-2">
+          <div className="w-full flex-wrap  flex justify-around">
+            <Smallcards name1 = 'Golden' name2 ='Bangles' svg={<Bangles/>} productcount='12'/>
+            <Smallcards name1 = 'Diamond' name2 ='Ring' svg={<Diamondring/>} productcount='12'/>
+            <Smallcards name1 = 'Golden' name2 ='Earrings' svg={<Eaarings/>} productcount='12'/>
+            <Smallcards name1 = 'Gold' name2 ='necklace' svg={<Goldnecklace/>} productcount='12'/>
+          </div>
+        </div>
         {/* green gem */}
-        <div className="relative w-full md:h-screen h-screen overflow-hidden ">
+        <div className="relative w-full md:h-screen h-screen overflow-hidden shadow-black shadow-2xl ">
           <div className="w-full absolute -z-10 h-full  ">
             <img
               className="transform h-full scale-x-[-1] w-full object-center object-cover"

@@ -8,8 +8,8 @@ function ScrolltoTop() {
         });
       };
   return (
-    <div onClick={scrolling} className='flex fixed z-[100000000] bg-red-500 rounded-full md:p-3 bottom-10 right-10'>
-        <GoArrowUp className='md:text-2xl' />
+    <div onClick={scrolling} className='flex cursor-pointer fixed z-[100000000] shadow-black shadow-inner bg-red-500 rounded-full md:p-3 p-5 bottom-10 right-10'>
+        <GoArrowUp className='text-2xl' />
     </div>
   )
 }
